@@ -76,3 +76,26 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  #action-row{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    .logo {
+      max-width: 50px;
+      max-height: 50px;
+      width: auto;
+      height: auto;
+    }
+
+    .button-group{
+      padding:15px 15px;
+
+      button{
+        margin:0 5px;
+      }
+    }
+  }
+}

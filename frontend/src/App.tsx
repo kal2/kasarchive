@@ -1,14 +1,48 @@
 import { Button } from "@/components/ui/button"
-import React from "react"
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+//import React from "react"
 
 function App() {
-  const [count, setCount] = React.useState(0)
 
   return (
-    <div className="min-h-screen bg-white grid place-items-center mx-auto py-8">
-      <div className="text-blue-900 text-2xl font-bold flex flex-col items-center space-y-4">
-        <h1>Vite + React + TS + Tailwind + shadcn/ui</h1>
-        <Button onClick={() => setCount(count + 1)}>Count up ({count})</Button>
+    <div id="app">
+      <div id="data-table">
+        <Table>
+          <TableCaption>A list of your recent invoices.</TableCaption>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[100px]">Invoice</TableHead>
+              <TableHead>Status</TableHead>
+              <TableHead>Method</TableHead>
+              <TableHead className="text-right">Amount</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell className="font-medium">INV001</TableCell>
+              <TableCell>Paid</TableCell>
+              <TableCell>Credit Card</TableCell>
+              <TableCell className="text-right">$250.00</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </div>
+      <div id="action-row">
+        <img src="./src/assets/logo.png" className="logo" />
+        <div className="button-group">
+          <Button variant="outline">Import CSV</Button>
+          <Button variant="outline">View Lab Data</Button>
+          <Button variant="outline">Recs</Button>
+          <Button variant="outline">Export</Button>
+        </div>
       </div>
     </div>
   )
